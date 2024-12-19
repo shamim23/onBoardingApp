@@ -10,10 +10,7 @@ export interface UserData {
   }
   password: string;
   about?: string;
-  street: string;
-  city: string;
-  state: string;
-  zip: string;
+ 
   birthdate?: string;
 }
 
@@ -22,7 +19,6 @@ interface UserStore {
   userData: UserData;
   setStep: (step: number) => void;
   updateUserData: (data: Partial<UserData>) => void;
-  setLastCompletedStep: (step: number) => void;
 }
 
 export const useUserStore = create<UserStore>((set,get) => ({
@@ -37,7 +33,6 @@ export const useUserStore = create<UserStore>((set,get) => ({
     email: '',
     password: '',
     about: '',
-
     birthdate: '',
   },
   setStep: (step) => set({ currentStep: step }),

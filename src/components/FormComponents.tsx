@@ -1,5 +1,4 @@
 // AboutMeComponent.tsx
-import React from 'react';
 
 export const AboutMeComponent = ({ value, onChange }: { value: string; onChange: (value: string) => void }) => (
   <div className="space-y-2">

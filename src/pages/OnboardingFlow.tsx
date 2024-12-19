@@ -6,6 +6,8 @@ import { AuthStep } from '../components/AuthStep';
 import { useUserDataSubmission } from '../hooks/useUserDataSubmission';
 import { useAuth } from '../hooks/useAuth';
 import { FormStep } from '../components/FormStep';
+import { StatusMessage } from '../components/onboarding/StatusMessage';
+
 
 
 
@@ -60,19 +62,12 @@ export default function OnboardingFlow() {
         <div className="mt-8 bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <StepIndicator currentStep={currentStep} />
           
-          {ErrorMessage && (
-            <div className="mt-4 p-2 bg-red-100 border border-red-400 text-red-700 rounded">
-              {ErrorMessage}
-            </div>
-          )}
+          <StatusMessage 
+            error={authError || submissionError}
+            success={submissionSuccess || authError}
+          />
           
-          {submissionSuccess && (
-            <div className="mt-4 p-2 bg-green-100 border border-green-400 text-green-700 rounded">
-              {submissionSuccess}
-            </div>
-          )}
-
-          {currentStep === 1 ? (
+       {currentStep === 1 ? (
             <AuthStep 
               userData={userData} 
               updateUserData={updateUserData} 

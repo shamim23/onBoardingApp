@@ -1,4 +1,3 @@
-import React,{useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import OnboardingFlow from './pages/OnboardingFlow';
 import AdminPage from './pages/AdminPage';
@@ -6,7 +5,6 @@ import DataTable from './pages/DataTable';
 
 function App() {
 
-   //const [isLogin,setIsLogin] = useState(false)
 
   return (
     <Router>
