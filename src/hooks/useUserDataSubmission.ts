@@ -40,7 +40,6 @@ export const useUserDataSubmission = () => {
     }
   
     let response;
-    debugger;
     if (existingUser) {
       const { error } = await supabase.from('users').update(userDataToSubmit).eq('email', userData.email);
       
